@@ -1,2 +1,2 @@
-# moz-types
+# gecko-types
 TypeScript definitions for Mozilla APIs
