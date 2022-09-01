@@ -752,8 +752,8 @@ declare var Ci: Gecko.Ci;
 declare var Services: Gecko.Services;
 
 // Global actor modules
-declare var JSWindowActorParent: Gecko.JSWindowActorParent;
-declare var JSWindowActorChild: Gecko.JSWindowActorChild;
+declare class JSWindowActorParent extends Gecko.JSWindowActorParent { }
+declare class JSWindowActorChild extends Gecko.JSWindowActorChild { }
 
 /**
  * This is a variant on the normal Document, as it contains chrome-specific properties.
