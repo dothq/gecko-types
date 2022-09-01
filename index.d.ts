@@ -631,7 +631,7 @@ declare namespace Gecko {
         getByInnerWindowId(innerWindowId: number): WindowGlobalParent | null;
     }
 
-    interface JSActor {
+    class JSActor {
         sendAsyncMessage(messageName: string, obj?: any): void;
     
         sendQuery(messageName: string, obj?: any): Promise<any>;
@@ -647,7 +647,7 @@ declare namespace Gecko {
      * See https://firefox-source-docs.mozilla.org/dom/ipc/jsactors.html for
      * more details on how to use this architecture.
      */
-    interface JSWindowActorParent extends JSActor {
+     class JSWindowActorParent extends JSActor {
         /**
          * Actor initialization occurs after the constructor is called but before the
          * first message is delivered. Until the actor is initialized, accesses to
@@ -674,7 +674,7 @@ declare namespace Gecko {
      * See https://firefox-source-docs.mozilla.org/dom/ipc/jsactors.html for
      * more details on how to use this architecture.
      */
-    interface JSWindowActorChild extends JSActor {
+    class JSWindowActorChild extends JSActor {
         /**
          * Actor initialization occurs after the constructor is called but before the
          * first message is delivered. Until the actor is initialized, accesses to
