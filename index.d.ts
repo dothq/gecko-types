@@ -631,11 +631,43 @@ declare namespace Gecko {
         getByInnerWindowId(innerWindowId: number): WindowGlobalParent | null;
     }
 
+    interface ReceiveMessageArgument {
+        /**
+         * The target of the message. Either an element owning the message manager, or message
+         * manager itself if no element owns it.
+         */
+        target: any;
+
+        /**
+         * Message name.
+         */
+        name: string;
+
+        sync: boolean;
+
+        /**
+         * Structured clone of the sent message data
+         */
+        data: any;
+
+        /**
+         * Same as .data, deprecated.
+         * @deprecated
+         */
+        json: any;
+
+        ports: Map<any, any>;
+
+        targetFrameLoader: FrameLoader;
+    }
+
     class JSActor {
         sendAsyncMessage(messageName: string, obj?: any): void;
     
         sendQuery(messageName: string, obj?: any): Promise<any>;
     
+        receiveMessage(message?: ReceiveMessageArgument): void;
+
         readonly name: string;
     }
 
