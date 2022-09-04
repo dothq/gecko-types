@@ -27,7 +27,7 @@ export * from "./nsIPrefBranch";
 export * from "./nsIURI";
 export * from "./nsIXULBrowserWindow";
 export * from "./ReceiveMessageArgument";
-export * from "./Services";
+export * from "./services";
 export * from "./SharedLibrary";
 export * from "./WindowGlobalChild";
 export * from "./WindowGlobalParent";
