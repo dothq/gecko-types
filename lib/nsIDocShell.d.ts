@@ -14,4 +14,6 @@ export interface nsIDocShell {
      *                       the load.
      */
     loadURI(aLoadState: any, aSetNavigating: boolean): void;
+
+    treeOwner: any; /* @todo */
 }
