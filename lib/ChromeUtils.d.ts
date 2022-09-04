@@ -11,6 +11,6 @@ export interface ChromeUtils {
      * @returns the module code's global object.
      *
      */
-    import: (resourceURI: string) => any;
+    import: <T>(resourceURI: string) => T;
     defineModuleGetter: (target: any, variable: string, path: string) => void;
 }
