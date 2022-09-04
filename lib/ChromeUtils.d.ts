@@ -13,4 +13,5 @@ export interface ChromeUtils {
      */
     import: <T extends any>(resourceURI: string) => { [key: string]: T };
     defineModuleGetter: (target: any, variable: string, path: string) => void;
+    generateQI: (contractIDs: string[]): any;
 }
