@@ -49,6 +49,16 @@ export type Services = {
     io: {
         newURI(url: string): nsIURI;
     };
+    policies: {
+        isAllowed(feature: string): boolean;
+        getActivePolicies(): { [key: string]: boolean };
+        getSupportMenu(): any;
+        getExtensionPolicy(extensionID: string): any;
+        getExtensionSettings(extensionID: string): any;
+        mayInstallAddon(addon: any): boolean;
+        allowedInstallSource(uri: nsIURI): boolean;
+        isExemptExecutableExtension(url: string, extension: string): boolean;
+    };
     scriptSecurityManager: any;
     startup: {
         quit: (optionsBitmask: number) => void;
