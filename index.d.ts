@@ -8,6 +8,7 @@
 */
 
 import * as Gecko from "./lib";
+import { nsIDocShell } from "./lib";
 
 interface Cc {
     "@mozilla.org/process/environment;1": {
@@ -22,6 +23,9 @@ interface Ci {
     nsIFilePicker: Gecko.nsIFilePicker;
     nsIEnvironment: Gecko.nsIEnvironment;
     nsIDocShell: Gecko.nsIDocShell;
+    nsIInterfaceRequestor: Gecko.nsIInterfaceRequestor;
+    nsIAppWindow: Gecko.nsIAppWindow;
+    nsIXULBrowserWindow: Gecko.nsIXULBrowserWindow;
 }
 
 declare const chrome: {
@@ -125,4 +129,10 @@ declare global {
     }
 
     type nsIPrefBranch = Gecko.nsIPrefBranch;
+
+    interface Window {
+        docShell: nsIDocShell;
+        browserDOMWindow: any;
+        XULBrowserWindow: any;
+    }
 }
