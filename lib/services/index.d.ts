@@ -3,6 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import { nsIPrefBranch } from "../nsIPrefBranch";
+import { ServicesEls } from "./els";
 import { ServicesFocus } from "./focus";
 import { ServicesIo } from "./io";
 import { ServicesObs } from "./obs";
@@ -17,6 +18,7 @@ export type Services = {
     profiler: ServicesProfiler;
     obs: ServicesObs;
     wm: ServicesWm;
+    els: ServicesEls;
     focus: ServicesFocus;
     io: ServicesIo;
     policies: ServicesPolicies;
