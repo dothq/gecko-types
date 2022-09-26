@@ -56,10 +56,7 @@ declare global {
     class JSWindowActorParent extends Gecko.JSWindowActorParent { }
     class JSWindowActorChild extends Gecko.JSWindowActorChild { }
 
-    /**
-     * This is a variant on the normal Document, as it contains chrome-specific properties.
-     */
-    interface ChromeDocument extends Document {
+    interface Document {
         /**
          * Create a XUL element of a specific type. Right now this function
          * only refines iframes, but more tags could be added.
@@ -77,11 +74,11 @@ declare global {
      * This is a variant on the HTMLElement, as it contains chrome-specific properties.
      */
     interface ChromeHTMLElement extends HTMLElement {
-        ownerDocument: ChromeDocument;
+        ownerDocument: Document;
     }
 
     interface XULElement extends HTMLElement {
-        ownerDocument: ChromeDocument;
+        ownerDocument: Document;
     }
 
     interface XULIframeElement extends XULElement {
