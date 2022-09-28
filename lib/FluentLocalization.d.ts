@@ -8,6 +8,9 @@ export interface FluentLocalization {
     formatValue(id: string, args?: L10nArgs): Promise<string | null>;
     formatValues(ids: string[], args?: L10nArgs): Promise<string[] | null[]>;
 
+    formatValueSync(id: string, args?: L10nArgs): string | null;
+    formatValuesSync(ids: string[], args?: L10nArgs): string[] | null[];
+
     /**
      * This function sets the attributes data-l10n-id and possibly data-l10n-args
      * on the element.
