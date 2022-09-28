@@ -9,6 +9,7 @@ import { ServicesIo } from "./io";
 import { ServicesObs } from "./obs";
 import { ServicesPolicies } from "./policies";
 import { ServicesProfiler } from "./profiler";
+import { ServicesScriptloader } from "./scriptloader";
 import { ServicesSearch } from "./search";
 import { ServicesStartup } from "./startup";
 import { ServicesWm } from "./wm";
@@ -22,6 +23,7 @@ export type Services = {
     focus: ServicesFocus;
     io: ServicesIo;
     policies: ServicesPolicies;
+    scriptloader: ServicesScriptloader;
     scriptSecurityManager: any;
     search: ServicesSearch;
     startup: ServicesStartup;
